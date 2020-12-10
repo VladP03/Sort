@@ -1,12 +1,13 @@
-import java.lang.reflect.Array;
-
 public class BubbleSort implements Sort{
 
+    long time;
+
     @Override
-    public void doSort(Integer[] array) {
+    public void doSort(int[] array) {
 
         boolean done;
 
+        long start = System.nanoTime();
         do {
             done = true;
             for (Integer i=0; i<array.length -1;i++) {
@@ -19,5 +20,17 @@ public class BubbleSort implements Sort{
             }
 
         }while (!done);
+
+        long end = System.nanoTime();
+        setTime((end-start)/1_000_000_000);     // return in seconds
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    @Override
+    public long getTime() {
+        return time;
     }
 }

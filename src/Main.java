@@ -1,19 +1,36 @@
-import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
+        Main main = new Main();
 
-        Integer[] arr = new Integer[(int) (Math.random()*100+1)];
-        for (int i=0; i<arr.length;i++) {
-            arr[i] = (int)(Math.random()*100);
+        int sizeOfArray;            // size of the array
+        int numbersOfDigits;        // in which interval are the numbers generated
+
+        Random random = new Random();       // generate the numbers;
+
+        sizeOfArray = 1_000_000_000;
+        numbersOfDigits = 4;
+
+        int[] array = new int[sizeOfArray];
+        for (int i=0;i<array.length;i++) {
+            array[i] = random.nextInt((int) Math.pow(10,numbersOfDigits));
         }
 
-        displaySorted(new BubbleSort(), arr);
+        main.displaySorted(new BubbleSort(), array);
     }
 
-    public static void displaySorted(Sort strategy, Integer[] arr) {
+    private void displaySorted(Sort strategy, int[] arr) {
         strategy.doSort(arr);
-        System.out.println(Arrays.toString(arr));
+        //displayArray(arr);
+        System.out.println(strategy.getTime());
+    }
+
+    private void displayArray (int[] array) {
+
+        for (int i=0;i<array.length;i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }

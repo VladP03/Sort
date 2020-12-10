@@ -1,4 +1,5 @@
 public interface Sort {
 
-    void doSort(Integer[] array);
+    void doSort(int[] array);
+    long getTime();
 }
