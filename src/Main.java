@@ -2,6 +2,8 @@ import SortAlgorithms.BubbleSort.BubbleSortAsc;
 import SortAlgorithms.BubbleSort.BubbleSortDesc;
 import SortAlgorithms.NaivSort.NaivSortAsc;
 import SortAlgorithms.NaivSort.NaivSortDesc;
+import SortAlgorithms.ShellSort.ShellSortAsc;
+import SortAlgorithms.ShellSort.ShellSortDesc;
 import SortAlgorithms.Sort;
 
 import java.util.Random;
@@ -27,11 +29,15 @@ public class Main {
         int[] copy02OfArray = array.clone();
         int[] copy03OfArray = array.clone();
         int[] copy04OfArray = array.clone();
+        int[] copy05OfArray = array.clone();
+        int[] copy06OfArray = array.clone();
 
         //displaySorted(new BubbleSortAsc(), copy01OfArray);
         //displaySorted(new BubbleSortDesc(), copy02OfArray);
         displaySorted(new NaivSortAsc(), copy03OfArray);
         displaySorted(new NaivSortDesc(), copy04OfArray);
+        displaySorted(new ShellSortAsc(), copy03OfArray);
+        displaySorted(new ShellSortDesc(), copy04OfArray);
 
 
     }
