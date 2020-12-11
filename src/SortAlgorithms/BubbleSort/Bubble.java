@@ -1,4 +1,8 @@
-public class BubbleSort implements Sort{
+package SortAlgorithms.BubbleSort;
+
+import SortAlgorithms.Sort;
+
+public abstract class Bubble implements Sort {
 
     long time;
 
@@ -11,7 +15,7 @@ public class BubbleSort implements Sort{
         do {
             done = true;
             for (Integer i=0; i<array.length -1;i++) {
-                if (array[i] > array[i+1]) {
+                if (condition(array[i],array[i+1])) {
                     int aux = array[i];
                     array[i] = array[i+1];
                     array[i+1] = aux;
@@ -25,12 +29,14 @@ public class BubbleSort implements Sort{
         setTime((end-start)/1_000_000_000);     // return in seconds
     }
 
-    public void setTime(long time) {
-        this.time = time;
-    }
-
     @Override
     public long getTime() {
         return time;
     }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public abstract boolean condition(int a, int b);
 }
