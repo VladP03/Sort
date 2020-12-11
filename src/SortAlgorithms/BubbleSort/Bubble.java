@@ -4,7 +4,7 @@ import SortAlgorithms.Sort;
 
 public abstract class Bubble implements Sort {
 
-    long time;
+    private long time;
 
     @Override
     public void doSort(int[] array) {

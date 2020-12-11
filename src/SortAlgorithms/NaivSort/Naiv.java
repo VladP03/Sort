@@ -4,7 +4,7 @@ import SortAlgorithms.Sort;
 
 public abstract class Naiv implements Sort {
 
-    long time;
+    private long time;
 
     @Override
     public void doSort(int[] array) {
