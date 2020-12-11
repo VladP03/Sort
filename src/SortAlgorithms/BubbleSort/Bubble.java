@@ -26,17 +26,20 @@ public abstract class Bubble implements Sort {
         }while (!done);
 
         long end = System.nanoTime();
+
         setTime((end-start)/1_000_000_000);     // return in seconds
     }
+
+    public abstract boolean condition(int a, int b);
 
     @Override
     public long getTime() {
         return time;
     }
 
+    @Override
     public void setTime(long time) {
         this.time = time;
     }
 
-    public abstract boolean condition(int a, int b);
 }
