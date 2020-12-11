@@ -9,21 +9,15 @@ public abstract class Selection implements Sort {
     @Override
     public void doSort(int[] array) {
 
-        int nrIncr = 4;
-        int h = nrIncr+1;
-
-        for (int k=0;k<nrIncr;k++) {
-            h--;
-            for (int i=0;i<array.length;i=i+h) {
-                int temp=array[i];
-                int j=i-h;
-                while ( j>=0 && condition(temp,array[j])) {
-                    array[j+h] = array[j];
-                    j=j-h;
-                }
-                if (j+h != i) {
-                    array[j+h]=temp;
-                }
+        for (int k=1;k<array.length;k++) {
+            int i = k-1;
+            int temp =array[k];
+            while ( i>=0 && condition(temp,array[i])) {
+                array[i+1] = array[i];
+                i--;
+            }
+            if (i!=k-1) {
+                array[i+1] = temp;
             }
         }
 
