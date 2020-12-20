@@ -7,27 +7,20 @@ import SortAlgorithms.SelectionSort.SelectionSortDesc;
 import SortAlgorithms.ShellSort.ShellSortAsc;
 import SortAlgorithms.ShellSort.ShellSortDesc;
 
-import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        Initialize initialize = new Initialize(50_000, 7);
         Display display = new Display();
 
-        int sizeOfArray;            // size of the array
-        int numbersOfDigits;        // in which interval are the numbers generated
+        Integer[] integerArray = initialize.getArray(0);
+        Double[] doubleArray = initialize.getArray(0.0d);
 
-        Random random = new Random();       // generate the numbers;
+        display.sort(new BubbleSortAsc(), integerArray);
 
-        sizeOfArray = 5_000_0;
-        numbersOfDigits = 4;
-
-        Integer[] array = new Integer[sizeOfArray];
-        for (int i=0;i<array.length;i++) {
-            array[i] = random.nextInt((int) Math.pow(10,numbersOfDigits));
-        }
-
+        /*
         display.sort(new BubbleSortAsc(), array.clone());
         display.sort(new BubbleSortDesc(), array.clone());
         display.sort(new NaivSortAsc(), array.clone());
@@ -36,5 +29,6 @@ public class Main {
         display.sort(new ShellSortDesc(), array.clone());
         display.sort(new SelectionSortAsc(), array.clone());
         display.sort(new SelectionSortDesc(), array.clone());
+         */
     }
 }
