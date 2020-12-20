@@ -8,6 +8,7 @@ public abstract class Shell implements Sort {
 
     @Override
     public void doSort(Comparable[] array) {
+        long start = System.nanoTime();
 
         int nrIncr = 4;
         int h = nrIncr + 1;
@@ -26,6 +27,10 @@ public abstract class Shell implements Sort {
                 }
             }
         }
+
+        long end = System.nanoTime();
+
+        setTime((end-start)/1_000_000_000);     // return in seconds
 
     }
 

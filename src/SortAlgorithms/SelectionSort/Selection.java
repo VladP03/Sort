@@ -8,6 +8,7 @@ public abstract class Selection implements Sort {
 
     @Override
     public void doSort(Comparable[] array) {
+        long start = System.nanoTime();
 
         for (int k=1;k<array.length;k++) {
             int i = k-1;
@@ -21,6 +22,9 @@ public abstract class Selection implements Sort {
             }
         }
 
+        long end = System.nanoTime();
+
+        setTime((end-start)/1_000_000_000);     // return in seconds
     }
 
     public abstract boolean condition(Comparable a, Comparable b);
