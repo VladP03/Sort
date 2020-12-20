@@ -2,15 +2,18 @@ import SortAlgorithms.BubbleSort.BubbleSortAsc;
 import SortAlgorithms.BubbleSort.BubbleSortDesc;
 import SortAlgorithms.NaivSort.NaivSortAsc;
 import SortAlgorithms.NaivSort.NaivSortDesc;
+import SortAlgorithms.SelectionSort.SelectionSortAsc;
+import SortAlgorithms.SelectionSort.SelectionSortDesc;
 import SortAlgorithms.ShellSort.ShellSortAsc;
 import SortAlgorithms.ShellSort.ShellSortDesc;
-import SortAlgorithms.Sort;
 
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        Display display = new Display();
 
         int sizeOfArray;            // size of the array
         int numbersOfDigits;        // in which interval are the numbers generated
@@ -31,27 +34,16 @@ public class Main {
         int[] copy04OfArray = array.clone();
         int[] copy05OfArray = array.clone();
         int[] copy06OfArray = array.clone();
+        int[] copy07OfArray = array.clone();
+        int[] copy08OfArray = array.clone();
 
-        //displaySorted(new BubbleSortAsc(), copy01OfArray);
-        //displaySorted(new BubbleSortDesc(), copy02OfArray);
-        displaySorted(new NaivSortAsc(), copy03OfArray);
-        displaySorted(new NaivSortDesc(), copy04OfArray);
-        displaySorted(new ShellSortAsc(), copy03OfArray);
-        displaySorted(new ShellSortDesc(), copy04OfArray);
-
-
-    }
-
-    private static void displaySorted(Sort strategy, int[] arr) {
-        strategy.doSort(arr);
-        displayArray(arr);
-        System.out.println("\n" + strategy.getClass().getSimpleName() + " -> Time spent to sort: " + strategy.getTime() + " seconds\n");
-    }
-
-    private static void displayArray (int[] array) {
-
-        for (int i=0;i<array.length;i++) {
-            System.out.print(array[i] + " ");
-        }
+        display.sort(new BubbleSortAsc(), copy01OfArray);
+        display.sort(new BubbleSortDesc(), copy02OfArray);
+        display.sort(new NaivSortAsc(), copy03OfArray);
+        display.sort(new NaivSortDesc(), copy04OfArray);
+        display.sort(new ShellSortAsc(), copy05OfArray);
+        display.sort(new ShellSortDesc(), copy06OfArray);
+        display.sort(new SelectionSortAsc(), copy07OfArray);
+        display.sort(new SelectionSortDesc(), copy08OfArray);
     }
 }
