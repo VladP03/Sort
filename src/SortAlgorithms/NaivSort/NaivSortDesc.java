@@ -4,7 +4,7 @@ public class NaivSortDesc extends Naiv {
 
     @Override
     public boolean condition(Comparable a, Comparable b) {
-        if (a.compareTo(b) == 1) {
+        if (a.compareTo(b) == -1) {
             return true;
         }
 
