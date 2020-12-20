@@ -2,16 +2,16 @@ import SortAlgorithms.Sort;
 
 public class Display {
 
-    public void sort(Sort strategy, int[] arr) {
+    public void sort(Sort strategy, Comparable[] arr) {
 
         strategy.doSort(arr);
         displayArray(arr);
         System.out.println("\n" + strategy.getClass().getSimpleName() + " -> Time spent to sort: " + strategy.getTime() + " seconds\n");
     }
 
-    public void displayArray (int[] array) {
+    public void displayArray (Comparable[] array) {
 
-        for (int value : array) {
+        for (Comparable value : array) {
             System.out.print(value + " ");
         }
     }

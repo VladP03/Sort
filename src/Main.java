@@ -23,27 +23,18 @@ public class Main {
         sizeOfArray = 5_000_0;
         numbersOfDigits = 4;
 
-        int[] array = new int[sizeOfArray];
+        Integer[] array = new Integer[sizeOfArray];
         for (int i=0;i<array.length;i++) {
             array[i] = random.nextInt((int) Math.pow(10,numbersOfDigits));
         }
 
-        int[] copy01OfArray = array.clone();
-        int[] copy02OfArray = array.clone();
-        int[] copy03OfArray = array.clone();
-        int[] copy04OfArray = array.clone();
-        int[] copy05OfArray = array.clone();
-        int[] copy06OfArray = array.clone();
-        int[] copy07OfArray = array.clone();
-        int[] copy08OfArray = array.clone();
-
-        display.sort(new BubbleSortAsc(), copy01OfArray);
-        display.sort(new BubbleSortDesc(), copy02OfArray);
-        display.sort(new NaivSortAsc(), copy03OfArray);
-        display.sort(new NaivSortDesc(), copy04OfArray);
-        display.sort(new ShellSortAsc(), copy05OfArray);
-        display.sort(new ShellSortDesc(), copy06OfArray);
-        display.sort(new SelectionSortAsc(), copy07OfArray);
-        display.sort(new SelectionSortDesc(), copy08OfArray);
+        display.sort(new BubbleSortAsc(), array.clone());
+        display.sort(new BubbleSortDesc(), array.clone());
+        display.sort(new NaivSortAsc(), array.clone());
+        display.sort(new NaivSortDesc(), array.clone());
+        display.sort(new ShellSortAsc(), array.clone());
+        display.sort(new ShellSortDesc(), array.clone());
+        display.sort(new SelectionSortAsc(), array.clone());
+        display.sort(new SelectionSortDesc(), array.clone());
     }
 }

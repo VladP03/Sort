@@ -7,16 +7,14 @@ public abstract class Naiv implements Sort {
     private long time;
 
     @Override
-    public void doSort(int[] array) {
+    public void doSort(Comparable[] array) {
 
         long start = System.nanoTime();
 
         for (int i=0;i<array.length-1;i++) {
             for (int j=i+1;j<array.length;j++) {
                 if (condition(array[i],array[j])) {
-                    int aux = array[i];
-                    array[i] = array[j];
-                    array[j] = aux;
+                    swap(array, i, j);
                 }
             }
         }
@@ -26,7 +24,13 @@ public abstract class Naiv implements Sort {
         setTime((end-start)/1_000_000_000);     // return in seconds
     }
 
-    public abstract boolean condition(int a, int b);
+    public abstract boolean condition(Comparable a, Comparable b);
+
+    public void swap(Comparable[] array, int i, int j) {
+        Comparable aux = array[i];
+        array[i] = array[j];
+        array[j]=aux;
+    }
 
     @Override
     public void setTime(long setTime) {
