@@ -15,20 +15,16 @@ public class Main {
         Initialize initialize = new Initialize(50_000, 7);
         Display display = new Display();
 
-        Integer[] integerArray = initialize.getArray(0);
-        Double[] doubleArray = initialize.getArray(0.0d);
+        Integer[] integerArray = initialize.getIntegerArray();
+        Double[] doubleArray = initialize.getDoubleArray();
 
-        display.sort(new BubbleSortAsc(), integerArray);
-
-        /*
-        display.sort(new BubbleSortAsc(), array.clone());
-        display.sort(new BubbleSortDesc(), array.clone());
-        display.sort(new NaivSortAsc(), array.clone());
-        display.sort(new NaivSortDesc(), array.clone());
-        display.sort(new ShellSortAsc(), array.clone());
-        display.sort(new ShellSortDesc(), array.clone());
-        display.sort(new SelectionSortAsc(), array.clone());
-        display.sort(new SelectionSortDesc(), array.clone());
-         */
+        display.sort(new BubbleSortAsc(), integerArray.clone());
+        display.sort(new BubbleSortDesc(), integerArray.clone());
+        display.sort(new NaivSortAsc(), integerArray.clone());
+        display.sort(new NaivSortDesc(), integerArray.clone());
+        display.sort(new ShellSortAsc(), integerArray.clone());
+        display.sort(new ShellSortDesc(), integerArray.clone());
+        display.sort(new SelectionSortAsc(), integerArray.clone());
+        display.sort(new SelectionSortDesc(), integerArray.clone());
     }
 }

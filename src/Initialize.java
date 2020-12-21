@@ -11,7 +11,7 @@ public class Initialize {
         this.numbersOfDigits = numbersOfDigits;
     }
 
-    public Integer[] getArray(Integer param) {
+    public Integer[] getIntegerArray() {
         Integer[] array = new Integer[this.sizeOfArray];
 
         for (int i=0;i<sizeOfArray;i++) {
@@ -21,7 +21,7 @@ public class Initialize {
         return array;
     }
 
-    public Double[] getArray(Double param) {
+    public Double[] getDoubleArray() {
         Double[] array = new Double[this.sizeOfArray];
 
         for (int i=0;i<sizeOfArray;i++) {
