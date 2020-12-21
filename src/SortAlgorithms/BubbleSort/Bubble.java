@@ -2,11 +2,11 @@ package SortAlgorithms.BubbleSort;
 
 import SortAlgorithms.Sort;
 
-public abstract class Bubble implements Sort {
+public abstract class Bubble implements Sort<Comparable<Number>> {
     private long time;
 
     @Override
-    public void doSort(Comparable[] array) {
+    public void doSort(Comparable<Number>[] array) {
         boolean done;
 
         long start = System.nanoTime();
@@ -26,10 +26,10 @@ public abstract class Bubble implements Sort {
         setTime((end-start)/1_000_000_000);     // return in seconds
     }
 
-    public abstract boolean condition(Comparable a, Comparable b);
+    public abstract boolean condition(Comparable<Number> a, Comparable<Number> b);
 
-    public void swap(Comparable[] array, int i, int j) {
-        Comparable aux = array[i];
+    public void swap(Comparable<Number>[] array, int i, int j) {
+        Comparable<Number> aux = array[i];
         array[i] = array[j];
         array[j]=aux;
     }

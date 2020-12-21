@@ -2,12 +2,12 @@ package SortAlgorithms.ShellSort;
 
 import SortAlgorithms.Sort;
 
-public abstract class Shell implements Sort {
+public abstract class Shell implements Sort<Comparable<Number>> {
 
     private long time;
 
     @Override
-    public void doSort(Comparable[] array) {
+    public void doSort(Comparable<Number>[] array) {
         long start = System.nanoTime();
 
         int nrIncr = 4;
@@ -16,7 +16,7 @@ public abstract class Shell implements Sort {
         for (int k = 0; k < nrIncr; k++) {
             h--;
             for (int i = 0; i < array.length; i = i + h) {
-                Comparable temp = array[i];
+                Comparable<Number> temp = array[i];
                 int j = i - h;
                 while (j >= 0 && condition(temp, array[j])) {
                     array[j + h] = array[j];
@@ -34,7 +34,7 @@ public abstract class Shell implements Sort {
 
     }
 
-    public abstract boolean condition(Comparable a, Comparable b);
+    public abstract boolean condition(Comparable<Number> a, Comparable<Number> b);
 
     @Override
     public long getTime() {
