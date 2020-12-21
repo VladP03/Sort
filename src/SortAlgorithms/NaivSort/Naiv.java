@@ -3,14 +3,12 @@ package SortAlgorithms.NaivSort;
 import SortAlgorithms.Sort;
 
 public abstract class Naiv implements Sort<Comparable<Number>> {
-
     private long time;
 
     @Override
     public void doSort(Comparable<Number>[] array) {
 
-        long start = System.nanoTime();
-
+        long start = System.nanoTime();                 // star the timer
         for (int i=0;i<array.length-1;i++) {
             for (int j=i+1;j<array.length;j++) {
                 if (condition(array[i],array[j])) {
@@ -18,8 +16,7 @@ public abstract class Naiv implements Sort<Comparable<Number>> {
                 }
             }
         }
-
-        long end = System.nanoTime();
+        long end = System.nanoTime();                   // stop the timer
 
         setTime((end-start)/1_000_000_000);     // return in seconds
     }

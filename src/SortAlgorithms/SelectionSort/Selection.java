@@ -3,13 +3,12 @@ package SortAlgorithms.SelectionSort;
 import SortAlgorithms.Sort;
 
 public abstract class Selection implements Sort<Comparable<Number>> {
-
     private long time;
 
     @Override
     public void doSort(Comparable<Number>[] array) {
-        long start = System.nanoTime();
 
+        long start = System.nanoTime();                         // start the timer
         for (int k=1;k<array.length;k++) {
             int i = k-1;
             Comparable<Number> temp =array[k];
@@ -21,8 +20,7 @@ public abstract class Selection implements Sort<Comparable<Number>> {
                 array[i+1] = temp;
             }
         }
-
-        long end = System.nanoTime();
+        long end = System.nanoTime();                           // stop the timer
 
         setTime((end-start)/1_000_000_000);     // return in seconds
     }

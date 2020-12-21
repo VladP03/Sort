@@ -7,9 +7,9 @@ public abstract class Bubble implements Sort<Comparable<Number>> {
 
     @Override
     public void doSort(Comparable<Number>[] array) {
-        boolean done;
+        boolean done;   // condition to stop
 
-        long start = System.nanoTime();
+        long start = System.nanoTime();         // start the timer
         do {
             done = true;
             for (int i = 0; i<array.length -1; i++) {
@@ -20,8 +20,7 @@ public abstract class Bubble implements Sort<Comparable<Number>> {
             }
 
         }while (!done);
-
-        long end = System.nanoTime();
+        long end = System.nanoTime();           // stop the timer
 
         setTime((end-start)/1_000_000_000);     // return in seconds
     }
