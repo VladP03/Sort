@@ -8,17 +8,18 @@ public abstract class Bubble implements Sort<Comparable<Number>> {
     @Override
     public void doSort(Comparable<Number>[] array) {
         boolean done;   // condition to stop
+        int lastLoopIndex = array.length;
 
         long start = System.nanoTime();         // start the timer
         do {
             done = true;
-            for (int i = 0; i<array.length -1; i++) {
+            for (int i = 0; i<lastLoopIndex-1; i++) {
                 if (condition(array[i],array[i+1])) {
                     swap(array, i, i+1);
                     done = false;
                 }
             }
-
+            lastLoopIndex--;
         }while (!done);
         long end = System.nanoTime();           // stop the timer
 
